@@ -19,8 +19,10 @@
     "react": "18.1.0",
     "react-bootstrap-icons": "^1.8.2",
     "react-dom": "18.1.0",
+    "react-photo-collage": "^1.0.9",
     "react-slick": "^0.29.0",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "styled-components": "^5.3.5"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.7",
