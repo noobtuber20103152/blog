@@ -14,13 +14,13 @@ function blog() {
         return src;
     }
     const images = ["https://source.unsplash.com/random/900×700/?code", "https://source.unsplash.com/random/900×700/?cricket", "https://source.unsplash.com/random/900×700/?football", "https://source.unsplash.com/random/900×700/?music", "https://source.unsplash.com/random/900×700/?social"]
-    // const router = useRouter();
-    // const { slug } = router.query
-    // console.log(slug)
+    const router = useRouter();
+    const { slug } = router.query
+    console.log(slug)
     return (
         <>
             <Head>
-                {/* <title>{slug.split("-").join(" ")}</title> */}
+                <title>{slug.split("-").join(" ")}</title>
             </Head>
             <Sidebar />
             <div className="container flex flex-col justify-center items-center my-20 ">

@@ -1,4 +1,6 @@
 
+const connectToMongo = require('../connect/connect');
+connectToMongo();
 var jwt = require('jsonwebtoken');
 const JWT_SECRET = 'Ujjawalisagoodb$oy';
 export default async function getuser(req, res) {

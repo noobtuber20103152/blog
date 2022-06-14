@@ -1,5 +1,7 @@
 
 const User = require("../model/user")
+const connectToMongo = require('../connect/connect');
+connectToMongo();
 const bcrypt = require("bcrypt")
 var jwt = require('jsonwebtoken');
 const JWT_SECRET = 'Ujjawalisagoodb$oy';
@@ -7,6 +9,7 @@ export default async function login(req, res) {
     if (req.method === "POST") {
         try {
             const userLoggingIn = req.body;
+            console.log(req.body)
             User.findOne({ username: userLoggingIn.username })
                 .then(dbUser => {
                     if (!dbUser) {
@@ -41,7 +44,7 @@ export default async function login(req, res) {
                         })
                 })
         } catch (err) {
-            res.json({error:err.message})
+            res.json({ error: err.message })
 
         }
     }
