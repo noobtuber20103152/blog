@@ -1,17 +1,17 @@
 import React from 'react'
 import Link from "next/link"
-function Verticlecard() {
+function Verticlecard(props) {
     return (
         <>
             <div class="max-w-sm lg:mx-0 mx-4 rounded col-md-3 overflow-hidden mt-4">
-                <img class="hover:scale-105 duration-500 hover:rounded-lg hover:cursor-pointer w-full h-60 rounded-lg" src="https://source.unsplash.com/random/900×700/?code" alt="Sunset in the mountains" />
+                <img class="hover:scale-105 duration-500 hover:rounded-lg hover:cursor-pointer w-full h-60 rounded-lg" src={props.bgimage} alt="Sunset in the mountains" />
                 <div class=" px-2 py-4">
-                    <p className='text-base text-gray-600 ' >July 17, 2020</p>
-                    <Link href="../../blog/How-to-become-mern-stack-web-developer"><a  class="font-bold text-xl mb-2">How to become mern stack web developer.</a></Link>
+                    <p className='text-base text-gray-600 ' >{props.createdAt}</p>
+                    <Link href={`../../blog/${props.title.split(" ").join("-")}`}><a  class="font-bold text-xl mb-2">{props.title}</a></Link>
                     <p class="text-gray-700 text-base">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
+                        {props.shortdesc}
                     </p>
-                    <p className='text-base mt-3 font-bold text-gray-600'>Rohit Yadav</p>
+                    <p className='text-base mt-3 font-bold text-gray-600'>{props.author}</p>
                 </div>
 
             </div>

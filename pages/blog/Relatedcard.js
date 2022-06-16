@@ -1,10 +1,16 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Link from "next/link"
 import Image from "next/image"
 function Relatedcard() {
     const myLoader = ({ src }) => {
         return src;
     }
+    const [data, setdata] = useState([]);
+    useEffect((e)=>{
+        async function fetchdata(){
+               let url = ""
+        }
+    }, [])
     return (
         <>
             <div className='flex justify-center mx-2 '>
@@ -16,7 +22,7 @@ function Relatedcard() {
                         <div class="lg:p-6 p-4 lg:w-9/12 flex justify-end  flex-col ">
                             <span className='text-base text-gray-700 mb-3' >July 17, 2022</span>
 
-                            <Link href="../../blog/How-to-become-mern-stack-web-developer"><a class="text-gray-900 text-2xl w-full font-bold mb-22">How to become mern stack web developer.</a></Link>
+                            <Link href="../../blog/How-to-become-a-mern-stack-web-developer"><a class="text-gray-900 text-2xl w-full font-bold mb-22">How to become a mern stack web developer.</a></Link>
                             <p class="text-gray-700 text-base w-12/12  mt-2 mb-0">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem exercitationem, nobis quos beatae molestias adipisci mollitia fuga harum ipsam. Deserunt ex nobis aliquid. Amet, excepturi repellendus.
                             </p>

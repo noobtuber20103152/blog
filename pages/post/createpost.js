@@ -112,7 +112,7 @@ function createpost() {
                         <div class="flex flex-wrap -mx-3 mb-2">
                             <div class="w-full  px-3 mt-6 md:mb-0">
                                 <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
-                                    Tags (seperate links by , )
+                                    Tags (seperate tags by , )
                                 </label>
                                 <textarea onChange={onchange} className='focus:bg-white p-2 resize-none focus:border-gray-500 w-full border bg-gray-200' name="tags" id="" cols="30" placeholder='react js, javascript' rows="2"></textarea>
                             </div>
