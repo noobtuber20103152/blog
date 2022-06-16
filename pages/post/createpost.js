@@ -15,7 +15,7 @@ function createpost() {
         console.log(data);
     }
     const submitPost = (e) => {
-        console.log("clicked")
+        // console.log("clicked")
         e.preventDefault();
         if (data.tags.length == 0) return;
         if (data.otherimages.length == 0) return;
@@ -27,11 +27,15 @@ function createpost() {
         const otherimagesarray = otherimages.map(element => {
             return element.trim();
         })
+
+        const longdesc = data.longdesc.split("%^&");
+        const longdescarray = longdesc.map(element => {
+            return element.trim();
+        })
+        data.longdesc = longdescarray;
         data.tags = tagsarray;
         data.otherimages = otherimagesarray;
         console.log(data)
-
-
         fetch("http://localhost:3000/api/post/uploadpost", {
             method: "POST",
             headers: {
@@ -83,13 +87,12 @@ function createpost() {
                                     Short description about blog
                                 </label>
                                 <textarea name="shortdesc" onChange={onchange} className='focus:bg-white p-2 resize-none focus:border-gray-500 w-full border bg-gray-200' id="" cols="30" rows="4"></textarea>
-
                             </div>
                             <div class="w-full px-3">
                                 <label class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
-                                    Complete description about your blog
+                                    Complete description about your blog( for new line type %^& )
                                 </label>
-                                <textarea onChange={onchange} className='p-2 focus:bg-white w-full focus:border-gray-500 border bg-gray-200' name="longdesc" id="" cols="30" rows="10"></textarea>
+                                <textarea placeholder='*Hey! this website is all about your thought %^& *Please star this website on github and open to contribute.' onChange={onchange} className='p-2 focus:bg-white w-full focus:border-gray-500 border bg-gray-200' name="longdesc" id="" cols="30" rows="10"></textarea>
                             </div>
                         </div>
                         <div class="flex flex-wrap -mx-3 mb-2">

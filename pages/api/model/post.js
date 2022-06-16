@@ -13,7 +13,10 @@ const postSchema = mongoose.Schema({
         required: true
     },
     longdesc: {
-        type: String,
+        type: Array,
+        item: {
+            type: String
+        },
         required: true
     },
     bgimage: {

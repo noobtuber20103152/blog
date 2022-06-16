@@ -8,7 +8,7 @@ function Verticlecard(props) {
                 <div class=" px-2 py-4">
                     <p className='text-base text-gray-600 ' >{props.createdAt}</p>
                     <Link href={`../../blog/${props.title.split(" ").join("-")}`}><a  class="font-bold text-xl mb-2">{props.title}</a></Link>
-                    <p class="text-gray-700 text-base">
+                    <p class="text-gray-700 text-[0.9rem]">
                         {props.shortdesc}
                     </p>
                     <p className='text-base mt-3 font-bold text-gray-600'>{props.author}</p>

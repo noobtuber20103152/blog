@@ -30,7 +30,7 @@ function ImageSlider() {
                 {(fetchdata).map((e) => {
                     return <>
                         <div className=''>
-                            <Hotizontalcard createdAt={e.createdAt.slice(0, 10)} bgimage={e.bgimage} title={e.title} shortdesc={e.shortdesc} />
+                            <Hotizontalcard author={e.author} createdAt={e.createdAt.slice(0, 10)} bgimage={e.bgimage} title={e.title} shortdesc={e.shortdesc} />
                         </div>
                     </>
                 })}

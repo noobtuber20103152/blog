@@ -4,7 +4,7 @@ function Mainblogcomponent(props) {
     const myLoader = ({ src }) => {
         return src;
     }
-    const loder = ({src})=>{
+    const loder = ({ src }) => {
         return src;
     }
     return (
@@ -23,7 +23,13 @@ function Mainblogcomponent(props) {
                         <Image loader={myLoader} className="w-full rounded-lg h-[34rem]" src={props.bgimage} height={500} width={1000} />
                     </div>
                     <div className='mt-5'>
-                        <p className='text-xl text-gray-600 font-semibold'>{props.longdesc}</p>
+                        {props.longdesc.map((e) => {
+                            return <>
+                                <p className='text-xl text-gray-600 font-semibold'>{e}</p>
+                                <br />
+                            </>
+                        })}
+
                     </div>
                     <div className="mt-5">
                         <div class="container grid grid-cols-3 gap-2 mx-auto">
