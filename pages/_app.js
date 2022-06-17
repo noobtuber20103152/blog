@@ -1,5 +1,4 @@
 import '../styles/globals.css'
-import Sidebar from './components/siderbar/Sidebar'
 import LoadingBar from 'react-top-loading-bar'
 import { useEffect, useState } from 'react'
 import { useRouter } from "next/router"

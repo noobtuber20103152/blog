@@ -18,8 +18,6 @@ function blog() {
         console.log(verticlecard)
     }, [])
     return (
-
-
         <>
             <Head>
                 <title>{slug.split('-').join(" ")}</title>
@@ -34,7 +32,7 @@ function blog() {
                 <h1 className='text-4xl text-black font-bold'>More blogs</h1>
                 {verticlecard.map((e) => {
                     return <>
-                        {e.title != slug.split("-").join(" ") && <Relatedcard title={e.title} bgimage={e.bgimage} shortdesc={e.shortdesc} author={e.author} />}
+                        {e.title != slug.split("-").join(" ") && <Relatedcard createdAt={e.createdAt.slice(0, 10)} title={e.title} bgimage={e.bgimage} shortdesc={e.shortdesc} author={e.author} />}
                     </>
 
                 })}

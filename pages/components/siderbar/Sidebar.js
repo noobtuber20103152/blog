@@ -17,14 +17,13 @@ function Sidebar() {
     const [login, setlogin] = useState(false)
     const logout = () => {
         window.localStorage.removeItem("token");
-        router.push("/");
-        console.log("logout");
+        setlogin(false);
     }
     useEffect(() => {
         let token = window.localStorage.getItem("token")
         if (token) setlogin(true)
         console.log(login)
-    }, [login])
+    }, [])
     return (
         <>
             <Head>
@@ -72,7 +71,7 @@ function Sidebar() {
                 </div>
                 <div class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 hover:text-white " >
                     <i class="bi bi-box-arrow-in-right"></i>
-                    {login && <Link href="" ><span onClick={logout} class="text-[15px] ml-4  font-bold">Logout</span></Link>}
+                    {login && <Link href="/" ><span onClick={logout} class="text-[15px] ml-4  font-bold">Logout</span></Link>}
                     {!login && <Link href="/components/auth/Login" ><span class="text-[15px] ml-4  font-bold">Login</span></Link>}
 
                 </div>

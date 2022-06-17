@@ -9,6 +9,7 @@ export default function Home() {
     <>
       <Head>
         <title>Home</title>
+        <link href="https://vercel.com/design/icons" rel="canonical" />
       </Head>
       <Sidebar />
       <Slider />

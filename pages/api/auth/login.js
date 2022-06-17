@@ -20,7 +20,7 @@ export default async function login(req, res) {
                     bcrypt.compare(userLoggingIn.password, dbUser.password)
                         .then(isCorrect => {
                             if (isCorrect) {
-                                console.log(isCorrect)
+                                // console.log(isCorrect)
                                 const payload = {
                                     id: dbUser._id,
                                     username: dbUser.username,

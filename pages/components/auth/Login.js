@@ -42,7 +42,7 @@ function Login() {
                     Login Page
                 </title>
             </Head>
-            <Sidebar/>
+            <Sidebar />
             <div class="w-full flex flex-wrap">
                 <div class="w-full md:w-1/2 flex flex-col">
 

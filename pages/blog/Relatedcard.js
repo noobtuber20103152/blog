@@ -16,7 +16,6 @@ function Relatedcard(props) {
                         </div>
                         <div class="lg:p-6 p-4 lg:w-9/12 flex justify-end  flex-col ">
                             <span className='text-base text-gray-700 mb-3' >{props.createdAt}</span>
-````
                             <Link href={`../../blog/${props.title.split(" ").join("-")}`}><a class="text-gray-900 text-2xl w-full font-bold mb-22">{props.title}</a></Link>
                             <p class="text-gray-700 text-base w-12/12  mt-2 mb-0">
                                 {props.shortdesc}

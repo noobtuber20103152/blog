@@ -2,11 +2,21 @@ import Head from "next/Head";
 import React, { useEffect, useState } from "react";
 import Link from "next/link"
 import { useRouter } from "next/router"
-import Sidebar from "../siderbar/Sidebar";
+import Sidebar from "../siderbar/Sidebar"; 
+import { Eye, Lock } from 'react-bootstrap-icons';
 function Register() {
     const router = useRouter();
     const [disabled, setdisabled] = useState(true);
     const [alert, setalert] = useState(false);
+    const [passtype, setpasstype] = useState("password");
+    const changePasstype = () => {
+        if (passtype == "password") {
+            setpasstype("text");
+        }
+        else {
+            setpasstype("password")
+        }
+    }
     const [data, setdata] = useState({ username: "", email: "", password: "" })
     const onchange = (e) => {
         setdata({ ...data, [e.target.name]: e.target.value });
@@ -50,7 +60,7 @@ function Register() {
                     Register Page
                 </title>
             </Head>
-            <Sidebar/>
+            <Sidebar />
             <div class="w-full flex flex-wrap">
                 <div class="w-full md:w-1/2 flex flex-col">
 
@@ -73,7 +83,9 @@ function Register() {
                             </div>
                             <div class="flex flex-col pt-4">
                                 <label for="password" class="text-lg">Password</label>
-                                <input onChange={onchange} type="password" name="password" id="password" placeholder="Password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline" />
+                                <input onChange={onchange} type={passtype} name="password" id="password" placeholder="Password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline" />
+                                {passtype == "password" && <span className="mt-2 text-right hover:cursor-pointer" onClick={changePasstype}  ><Eye className="text-left text-xl" /> </span>}
+                                {passtype == "text" && <span className="mt-2 text-left hover:cursor-pointer" onClick={changePasstype}  ><Lock className="text-left text-xl" /> </span>}
                             </div>
                             <button disabled={disabled} onClick={submit} value="Log In" class={`opacity-${disabled ? "25" : "100"} bg-blue-600 text-white font-bold text-lg hover:cursor-pointer hover:${disabled ? "bg-blue-600" : "bg-blue-800"}  p-2 mt-8`} >Register</button>
                         </div>
