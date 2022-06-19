@@ -5,13 +5,14 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 function ImageSlider() {
     const [fetchdata, setfetchdata] = useState([]);
+    const [count, setcount] = useState(0);
     useEffect(() => {
         async function fetchData() {
             let url = "http://localhost:3000/api/fetchdata/fetchdata";
             let data = await fetch(url, { method: "GET" });
             setfetchdata(await data.json());
         }
-        fetchData()
+        fetchData();
     }, [])
     const slRef = useRef(null);
     const settings = {
