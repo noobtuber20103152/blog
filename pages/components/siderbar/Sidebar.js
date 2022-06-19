@@ -2,9 +2,12 @@ import React, { useEffect, useState } from 'react'
 import Head from "next/head"
 import Link from "next/link"
 import { useRouter } from "next/router"
+import { Person } from "react-bootstrap-icons"
 function Sidebar() {
     const router = useRouter();
+    const [token , settoken]  = useState(undefined)
     const [downarrow, setdownarrow] = useState(true);
+    const [userdata, setuserdata] = useState({ username: "", about: "", image: "" });
     const dropdown = () => {
         document.querySelector("#submenu").classList.toggle("hidden");
         document.querySelector("#arrow").classList.toggle("rotate-0");
@@ -21,8 +24,35 @@ function Sidebar() {
     }
     useEffect(() => {
         let token = window.localStorage.getItem("token")
-        if (token) setlogin(true)
+        if (token) {
+            settoken(window.localStorage.getItem("token"))
+            setlogin(true)
+        }
         console.log(login)
+    }, [])
+    useEffect(() => {
+        let token = window.localStorage.getItem("token");
+        if (!token) {
+            // router.push("/components/auth/Login")
+        }
+        else {
+            fetch("http://localhost:3000/api/auth/getuser", {
+                method: "GET",
+                headers: {
+                    "token": window.localStorage.getItem("token")
+                }
+            })
+                .then(response => response.json())
+                .then(resdata => {
+                    // console.log(resdata);
+                    if (resdata.isLoggedIn == true) {
+                        setuserdata({ username: resdata.username, about: resdata.about, image: resdata.image })
+                    }
+                    else {
+                        // router.push("/components/auth/Login")
+                    }
+                })
+        }
     }, [])
     return (
         <>
@@ -54,6 +84,10 @@ function Sidebar() {
                     <i class="bi bi-bookmark-fill"></i>
                     <Link href="/post/createpost" ><span class="text-[15px] ml-4  font-bold">Create post</span></Link>
                 </div>
+                {token && <div class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 hover:text-white text-black">
+                    <Person className='text-xl' />
+                    <Link href={`/profile/${userdata.username}`} ><span class="text-[15px] ml-4  font-bold">Profile</span></Link>
+                </div>}
                 <div class="my-4 bg-gray-600 h-[1px]"></div>
                 <div onClick={dropdown} class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 hover:text-white ">
                     <i class="bi bi-chat-left-text-fill"></i>

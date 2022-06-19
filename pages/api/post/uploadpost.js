@@ -14,7 +14,8 @@ export default async function uploadpost(req, res) {
                 longdesc: Postdata.longdesc,
                 bgimage: Postdata.bgimage,
                 otherimages: Postdata.otherimages,
-                tags: Postdata.tags
+                tags: Postdata.tags,
+                token: Postdata.token
             })
             // console.log(savedPost)
             const responseData = await savedPost.save();

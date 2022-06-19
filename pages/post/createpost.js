@@ -5,7 +5,32 @@ import Sidebar from '../components/siderbar/Sidebar';
 function createpost() {
     const router = useRouter();
     const [btndisable, setbtndisable] = useState(true);
-    const[form, setform] = useState(false);
+    const [userdata, setuserdata] = useState({username:""})
+    const [form, setform] = useState(false);
+    useEffect(() => {
+        let token = window.localStorage.getItem("token");
+        if (!token) {
+            router.push("/components/auth/Login")
+        }
+        else {
+            fetch("http://localhost:3000/api/auth/getuser", {
+                method: "GET",
+                headers: {
+                    "token": window.localStorage.getItem("token")
+                }
+            })
+                .then(response => response.json())
+                .then(resdata => {
+                    // console.log(resdata);
+                    if (resdata.isLoggedIn == true) {
+                        setuserdata({ username: resdata.username})
+                    }
+                    else {
+                        router.push("/components/auth/Login")
+                    }
+                })
+        }
+    }, []);
     useEffect((e) => {
         let token = window.localStorage.getItem("token");
         if (!token) {
@@ -15,13 +40,16 @@ function createpost() {
             setform(true);
         }
     }, [])
-    const [data, setdata] = useState({ author: "", title: "", shortdesc: "", longdesc: "", bgimage: "", otherimages: [], tags: [] })
+    const [data, setdata] = useState({ author: "", title: "", shortdesc: "", longdesc: "", bgimage: "", otherimages: [], tags: []})
     const onchange = (e) => {
         setdata({ ...data, [e.target.name]: e.target.value });
         console.log(data);
     }
     const submitPost = (e) => {
         // console.log("clicked")
+        data.author = userdata.username
+        let token = window.localStorage.getItem("token");
+        console.log(data);
         e.preventDefault();
         if (data.tags.length == 0) return;
         if (data.otherimages.length == 0) return;
@@ -57,7 +85,7 @@ function createpost() {
             })
     }
     useEffect(() => {
-        if (data.author.length && data.title.length && data.shortdesc.length && data.longdesc.length && data.bgimage.length && data.otherimages.length && data.tags.length) {
+        if ( data.title.length && data.shortdesc.length && data.longdesc.length && data.bgimage.length && data.otherimages.length && data.tags.length) {
             setbtndisable(false);
         }
         else {
@@ -74,13 +102,13 @@ function createpost() {
                 <div className="w-12/12">
                     <form class="w-full">
                         <div class="flex flex-wrap -mx-3 mb-6">
-                            <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                            {/* <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                                 <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
                                     Author's Name
                                 </label>
                                 <input onChange={onchange} name="author" class="appearance-none block w-full bg-gray-200 text-gray-500 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="Jane" />
-                            </div>
-                            <div class="w-full md:w-1/2 px-3">
+                            </div> */}
+                            <div class="w-full md:w-2/2 px-3">
                                 <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
                                     Blog title
                                 </label>
@@ -106,7 +134,7 @@ function createpost() {
                                 <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-city">
                                     background image link
                                 </label>
-                                <input name="bgimage" onChange={onchange} class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="text" placeholder="https://source.unsplash.com/random/900×700/?code" />
+                                <input name="bgimage" onChange={onchange} class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="text" placeholder="https://source.unsplash.com/random/900×700/?code" />
                             </div>
 
                         </div>

@@ -7,6 +7,7 @@ export default async function register(req, res) {
     if (req.method === "POST") {
         try {
             const user = req.body;
+            console.log(user);
             if (user == undefined) {
                 res.json({ status: 400 });
             }
@@ -20,10 +21,12 @@ export default async function register(req, res) {
                 const dbUser = new User({
                     username: user.username,
                     email: user.email,
-                    password: user.password
+                    password: user.password,
+                    image: user.image,
+                    about:user.about
                 })
                 dbUser.save();
-                res.json({ status: 200 })
+                res.json({ status: 200, userInfo: {dbUser}})
             }
 
         } catch (error) {

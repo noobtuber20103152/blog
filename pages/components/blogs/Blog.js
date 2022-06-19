@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import Verticlecard from '../cards/Verticlecard'
-
 export default function Blog() {
     const [verticlecard, setverticlecard] = useState([]);
     useEffect(() => {

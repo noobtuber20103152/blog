@@ -10,23 +10,22 @@ function ImageSlider() {
             let url = "http://localhost:3000/api/fetchdata/fetchdata";
             let data = await fetch(url, { method: "GET" });
             setfetchdata(await data.json());
-            // console.log(await data.json());
         }
         fetchData()
     }, [])
     const slRef = useRef(null);
-    // const [slide, setslide] = useState(2)
     const settings = {
         dots: true,
         infinite: true,
         speed: 500,
+        autoplay: true,
         slidesToShow: 1,
         slidesToScroll: 1,
     };
     return (
         <>
             <h1 className='text-4xl text-center font-bold mt-20'>Trending</h1>
-            <Slider className='mx-3' ref={slRef} {...settings} >
+            <Slider className='md:mx-7 mx-6' ref={slRef} {...settings} >
                 {(fetchdata).map((e) => {
                     return <>
                         <div className=''>
