@@ -3,9 +3,11 @@ import Head from "next/head"
 import Link from "next/link"
 import { useRouter } from "next/router"
 import { Person } from "react-bootstrap-icons"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function Sidebar() {
     const router = useRouter();
-    const [token , settoken]  = useState(undefined)
+    const [token, settoken] = useState(undefined)
     const [downarrow, setdownarrow] = useState(true);
     const [userdata, setuserdata] = useState({ username: "", about: "", image: "" });
     const dropdown = () => {
@@ -19,7 +21,13 @@ function Sidebar() {
     }
     const [login, setlogin] = useState(false)
     const logout = () => {
+        toast.success("logout successfully", {
+            position: toast.POSITION.TOP_LEFT
+        })
         window.localStorage.removeItem("token");
+        setTimeout(() => {
+            router.push("/")
+        }, 1000);
         setlogin(false);
     }
     useEffect(() => {
@@ -60,6 +68,7 @@ function Sidebar() {
                 <link href="/dist/tailwind.css" rel="stylesheet" />
                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css" />
             </Head>
+            <ToastContainer />
             <span class="z-10 fixed  text-black text-4xl top-5 left-4 cursor-pointer" onClick={opeSidebar} >
                 <i class="bi bi-filter-left px-2 bg-blue-200 rounded-md"></i>
             </span>
@@ -86,10 +95,10 @@ function Sidebar() {
                 </div>
                 {token && <div class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 hover:text-white text-black">
                     <Person className='text-xl' />
-                    <Link href={`/profile/${userdata.username}`} ><span class="text-[15px] ml-4  font-bold">Profile</span></Link>
+                    <Link href={`/profile/${userdata.username.split(" ").join("-")}`} ><span class="text-[15px] ml-4  font-bold">Profile</span></Link>
                 </div>}
                 <div class="my-4 bg-gray-600 h-[1px]"></div>
-                <div onClick={dropdown} class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 hover:text-white ">
+                {/* <div onClick={dropdown} class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 hover:text-white ">
                     <i class="bi bi-chat-left-text-fill"></i>
                     <div class="flex justify-between w-full items-center">
                         <span class="text-[15px] ml-4  font-bold">Chatbox</span>
@@ -102,10 +111,10 @@ function Sidebar() {
                     <h1 class="cursor-pointer p-2 hover:bg-blue-600 hover:text-white rounded-md mt-1">Social</h1>
                     <h1 class="cursor-pointer p-2 hover:bg-blue-600 hover:text-white rounded-md mt-1">Personal</h1>
                     <h1 class="cursor-pointer p-2 hover:bg-blue-600 hover:text-white rounded-md mt-1">Friends</h1>
-                </div>
+                </div> */}
                 <div class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 hover:text-white " >
                     <i class="bi bi-box-arrow-in-right"></i>
-                    {login && <Link href="/" ><span onClick={logout} class="text-[15px] ml-4  font-bold">Logout</span></Link>}
+                    {login && <span onClick={logout} class="text-[15px] ml-4  font-bold">Logout</span>}
                     {!login && <Link href="/components/auth/Login" ><span class="text-[15px] ml-4  font-bold">Login</span></Link>}
 
                 </div>

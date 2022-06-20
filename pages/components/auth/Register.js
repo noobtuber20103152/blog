@@ -5,6 +5,9 @@ import { useRouter } from "next/router"
 import Sidebar from "../siderbar/Sidebar";
 import { Eye, Lock } from 'react-bootstrap-icons';
 import Header from "../../profile/Header";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { set } from "mongoose";
 function Register() {
     const router = useRouter();
     const [disabled, setdisabled] = useState(true);
@@ -42,10 +45,18 @@ function Register() {
             .then(resdata => {
                 console.log(resdata);
                 if (resdata.status == 400) {
-                    setalert(true);
+                    // setalert(true);
+                    toast.warn("opps! username or email already used", {
+                        position: toast.POSITION.TOP_LEFT
+                    });
                 }
                 else {
+                    toast.success("woww! registration successfully", {
+                        position: toast.POSITION.TOP_LEFT
+                    });
+                   setTimeout(() => {
                     router.push("/components/auth/Login");
+                   }, 1000);
                 }
                 setTimeout(() => {
                     setalert(false)
@@ -62,6 +73,7 @@ function Register() {
                 </title>
             </Head>
             <Sidebar />
+            <ToastContainer/>
             <div class="w-full flex flex-wrap">
                 <div class="w-full md:w-1/2 flex flex-col">
                     <div class="flex flex-col justify-center md:justify-start my-auto pt-8 md:pt-0 px-8 md:px-24 lg:px-32">

@@ -51,29 +51,6 @@ function profile() {
             setprofile(true)
         }
     }, []);
-
-    // useEffect(() => {
-    //     // console.log("fetch data to correspond to username")
-    //     console.log(window.localStorage.getItem('token'))
-    //     let token = window.localStorage.getItem("token");
-    //     if (!token) {
-    //         router.push("/components/auth/Login")
-    //     }
-    //     else {
-    //         fetch("http://localhost:3000/api/fetchdata/fetchdatatouser", {
-    //             method: "GET",
-    //             headers: {
-    //                 "author": userdata.username
-    //             }
-    //         })
-    //             .then(response => response.json())
-    //             .then(resdata => {
-    //                 console.log(resdata);
-    //                 setpostdata({ image: resdata.bgimage })
-    //             })
-    //     }
-    // }, [])
-
     return (
         <>
             <Head>
@@ -101,7 +78,7 @@ function profile() {
                                     </>
                                 })}
                             </div>
-                            {postdata.length == 0 && <h1 className="text-5xl  my-6 font-sans text-center" >You have no post uploaded yet</h1>}
+                            {postdata.length == 0 && <h1 className="text-5xl text-gray-600 text-medium  my-6 font-sans text-center" >You have no post uploaded yet</h1>}
                         </div>
                     </div>
                 </main>

@@ -25,7 +25,7 @@ function ImageSlider() {
     };
     return (
         <>
-            <h1 className='text-4xl text-center font-bold mt-20'>Trending</h1>
+            <h1 className='text-4xl text-center font-bold mt-20'>Popular blogs</h1>
             <Slider className='md:mx-7 mx-6' ref={slRef} {...settings} >
                 {(fetchdata).map((e) => {
                     return <>
