@@ -7,6 +7,7 @@ const JWT_SECRET = 'Ujjawalisagoodb$oy';
 export default async function getuser(req, res) {
     const token = req.headers['token'];
     // console.log(token);
+    // console.log(token)
     try {
         if (token) {
             jwt.verify(token, JWT_SECRET, async (err, decoded) => {
