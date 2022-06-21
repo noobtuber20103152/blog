@@ -34,7 +34,7 @@ function blog() {
     return (
         <>
             <Head>
-                {/* <title>{slug.split('-').join(" ")}</title> */}
+                <title>{slug.split('-').join(" ")}</title>
             </Head>
             <Sidebar />
             {verticlecard.map((e) => {

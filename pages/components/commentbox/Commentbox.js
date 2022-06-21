@@ -39,7 +39,7 @@ function Commentbox(props) {
     return (
         <>
             <ToastContainer />
-            <div class="md:w-1/2 w-2/2 bg-white p-2 pt-4 rounded shadow-lg">
+            <div class="md:w-1/2 w-full bg-white p-2 pt-4 rounded shadow-lg">
                 <div class="flex ml-3">
                     <div class="mr-3">
                         <img height={50} width={50} src={props.image} alt="" class="rounded-full" />
