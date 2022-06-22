@@ -1,4 +1,3 @@
-import Head from "next/Head";
 import React, { useEffect, useState } from "react";
 import Link from "next/link"
 import { useRouter } from "next/router"
@@ -7,7 +6,8 @@ import { Eye, Lock } from 'react-bootstrap-icons';
 import Header from "../../profile/Header";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { set } from "mongoose";
+import Head from "next/Head";
+
 function Register() {
     const router = useRouter();
     const [disabled, setdisabled] = useState(true);
@@ -21,7 +21,7 @@ function Register() {
             setpasstype("password")
         }
     }
-    const [data, setdata] = useState({ username: "", email: "", password: "", image:"", about:"" })
+    const [data, setdata] = useState({ username: "", email: "", password: "", image: "", about: "" })
     const onchange = (e) => {
         setdata({ ...data, [e.target.name]: e.target.value });
     }
@@ -54,9 +54,9 @@ function Register() {
                     toast.success("woww! registration successfully", {
                         position: toast.POSITION.TOP_LEFT
                     });
-                   setTimeout(() => {
-                    router.push("/components/auth/Login");
-                   }, 1000);
+                    setTimeout(() => {
+                        router.push("/components/auth/Login");
+                    }, 1000);
                 }
                 setTimeout(() => {
                     setalert(false)
@@ -73,7 +73,7 @@ function Register() {
                 </title>
             </Head>
             <Sidebar />
-            <ToastContainer/>
+            <ToastContainer />
             <div className="w-full flex flex-wrap">
                 <div className="w-full md:w-1/2 flex flex-col">
                     <div className="flex flex-col justify-center md:justify-start my-auto pt-8 md:pt-0 px-8 md:px-24 lg:px-32">
@@ -104,8 +104,8 @@ function Register() {
                                 <input onChange={onchange} type="text" name="image" id="image" placeholder="image" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline" />
                             </div>
                             <div className="flex flex-col pt-4">
-                                <label  htmlFor="email" className="text-lg ">Something about yourself</label>
-                                <textarea cols="30" rows="3"onChange={onchange} type="text" name="about" id="about" placeholder="i'm a gamer." className="resize-none shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline" />
+                                <label htmlFor="email" className="text-lg ">Something about yourself</label>
+                                <textarea cols="30" rows="3" onChange={onchange} type="text" name="about" id="about" placeholder="i'm a gamer." className="resize-none shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline" />
                             </div>
                             <button disabled={disabled} onClick={submit} value="Log In" className={`opacity-${disabled ? "25" : "100"} bg-blue-600 text-white font-bold text-lg hover:cursor-pointer hover:${disabled ? "bg-blue-600" : "bg-blue-800"}  p-2 mt-8`} >Register</button>
                         </div>
@@ -113,10 +113,10 @@ function Register() {
                             <p>Already have an account? <Link href="/components/auth/Login"> Login here </Link></p>
                         </div>
                     </div>
-                
+
                 </div>
                 <div className="md:w-1/2 w-full shadow-2xl">
-                <Header imgsrc={data.image} about={data.about} username={data.username}/>
+                    <Header imgsrc={data.image} about={data.about} username={data.username} />
                 </div>
             </div>
         </>

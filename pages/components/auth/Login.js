@@ -1,4 +1,4 @@
-import Head from "next/Head";
+
 import React, { useState } from "react";
 import { useRouter } from "next/router"
 import Link from "next/link"
@@ -6,6 +6,7 @@ import Sidebar from "../siderbar/Sidebar";
 import { Eye, Lock } from 'react-bootstrap-icons';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Head from "next/Head";
 function Login() {
 
     const router = useRouter();
