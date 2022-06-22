@@ -4,7 +4,7 @@ import Sidebar from '../components/siderbar/Sidebar'
 import { useRouter } from "next/router"
 import Head from "next/head"
 import { useEffect, useState } from 'react'
-function index() {
+function Index() {
     const router = useRouter();
     const { slug } = router.query;
     const [commentdata, setcommentdata] = useState([])
@@ -40,4 +40,4 @@ function index() {
     )
 }
 
-export default index
+export default Index

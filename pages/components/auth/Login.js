@@ -80,7 +80,7 @@ function Login() {
                             <button onClick={submit} value="Log In" className="bg-black text-white font-bold text-lg hover:bg-gray-700 p-2 mt-8" >Log In</button>
                         </div>
                         <div className="text-center pt-12 pb-12">
-                            <p>Don't have an account? <Link href="/components/auth/Register"> Register here.</Link></p>
+                            <p>Do not have an account? <Link href="/components/auth/Register"> Register here.</Link></p>
                         </div>
                     </div>
                 </div>
