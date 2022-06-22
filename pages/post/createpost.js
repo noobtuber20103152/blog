@@ -126,7 +126,7 @@ function Createpost() {
                     <form className="w-full">
                         <div className="flex flex-wrap -mx-3 mb-6">
                             <div className="w-full md:w-2/2 px-3">
-                                <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
+                                <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-last-name">
                                     Blog title
                                 </label>
                                 <input value={data.title} name="title" onChange={onchange} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Title" />
@@ -134,13 +134,13 @@ function Createpost() {
                         </div>
                         <div className="flex flex-wrap -mx-3 mb-6">
                             <div className="w-full px-3">
-                                <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
+                                <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
                                     Short description about blog
                                 </label>
                                 <textarea value={data.shortdesc} name="shortdesc"  onChange={onchange} className='focus:bg-white focus:outline-none p-2 resize-none focus:border-gray-500 w-full border bg-gray-200' id="" cols="30" rows="4"></textarea>
                             </div>
                             <div className="w-full px-3">
-                                <label className=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
+                                <label className=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
                                     Complete description about your blog( for new line type %^& )
                                 </label>
                                 <textarea value={data.longdesc} placeholder='' onChange={onchange} className='p-2 focus:outline-none focus:bg-white w-full focus:border-gray-500 border bg-gray-200' name="longdesc" id="" cols="30" rows="10"></textarea>
@@ -148,7 +148,7 @@ function Createpost() {
                         </div>
                         <div className="flex flex-wrap -mx-3 mb-2">
                             <div className="w-full  px-3 mb-6 md:mb-0">
-                                <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-city">
+                                <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-city">
                                     background image link
                                 </label>
                                 <input value={data.bgimage} name="bgimage" onChange={onchange} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="text" placeholder="https://source.unsplash.com/random/900×700/?code" />
@@ -157,7 +157,7 @@ function Createpost() {
                         </div>
                         <div className="flex flex-wrap -mx-3 mb-2">
                             <div className="w-full  px-3 mt-6 md:mb-0">
-                                <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
+                                <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-zip">
                                     Other Images links (seperate links by , )
                                 </label>
                                 <textarea value={data.otherimages }onChange={onchange} className='focus:bg-white p-2 resize-none focus:outline-none focus:border-gray-500 w-full border bg-gray-200' name="otherimages" id="" cols="30" placeholder='https://source.unsplash.com/random/900×700/?code, https://source.unsplash.com/random/900×700/?cricket' rows="4"></textarea>
@@ -165,7 +165,7 @@ function Createpost() {
                         </div>
                         <div className="flex flex-wrap -mx-3 mb-2">
                             <div className="w-full  px-3 mt-6 md:mb-0">
-                                <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
+                                <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-zip">
                                     Tags (seperate tags by , )
                                 </label>
                                 <textarea value={data.tags} onChange={onchange} className='focus:bg-white focus:outline-none p-2 resize-none focus:border-gray-500 w-full border bg-gray-200' name="tags" id="" cols="30" placeholder='react js, javascript' rows="2"></textarea>

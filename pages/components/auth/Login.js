@@ -68,11 +68,11 @@ function Login() {
                         <p className="text-center text-3xl">Welcome.</p>
                         <div className="flex flex-col pt-3 md:pt-8" >
                             <div className="flex flex-col pt-4">
-                                <label for="email" className="text-lg">Username</label>
+                                <label htmlFo="email" className="text-lg">Username</label>
                                 <input onChange={onchange} type="username" name="username" id="username" placeholder="xyz" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline" />
                             </div>
                             <div className="flex flex-col pt-4">
-                                <label for="password" className="text-lg">Password</label>
+                                <label htmlFo="password" className="text-lg">Password</label>
                                 <input onChange={onchange} type={passtype} name="password" id="password" placeholder="Password" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline" />
                                 {passtype == "password" && <span className="mt-2 text-right hover:cursor-pointer" onClick={changePasstype}  ><Eye className="text-left text-xl" /> </span>}
                                 {passtype == "text" && <span className="mt-2 text-left hover:cursor-pointer" onClick={changePasstype}  ><Lock className="text-left text-xl" /> </span>}

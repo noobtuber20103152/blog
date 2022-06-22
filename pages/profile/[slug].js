@@ -7,7 +7,7 @@ import Post from "./Post"
 import Sidebar from '../components/siderbar/Sidebar'
 import Head from "next/head"
 import { useEffect, useState } from 'react'
-function profile() {
+function Profile() {
     const router = useRouter();
     const [userdata, setuserdata] = useState({ username: "", about: "", image: "" })
     const [postdata, setpostdata] = useState([])
@@ -59,19 +59,19 @@ function profile() {
             {profile && <div>
                 <Sidebar />
                 <Profilenavbar />
-                <main class="bg-gray-100 bg-opacity-25">
-                    <div class="lg:w-8/12 lg:mx-auto mb-8">
+                <main className="bg-gray-100 bg-opacity-25">
+                    <div className="lg:w-8/12 lg:mx-auto mb-8">
                         <Header postno={postdata.length} imgsrc={userdata.image} about={userdata.about} username={userdata.username} />
-                        <div class="px-px md:px-3">
-                            <ul class="flex items-center justify-around md:justify-center space-x-12  uppercase tracking-widest font-semibold text-xs text-gray-600 border-t">
-                                <li class="md:border-t md:border-gray-700 md:-mt-px md:text-gray-700">
-                                    <a class="inline-block p-3" href="#">
-                                        <i class="fas fa-th-large text-xl md:text-xs"></i>
-                                        <span class="hidden md:inline">post</span>
+                        <div className="px-px md:px-3">
+                            <ul className="flex items-center justify-around md:justify-center space-x-12  uppercase tracking-widest font-semibold text-xs text-gray-600 border-t">
+                                <li className="md:border-t md:border-gray-700 md:-mt-px md:text-gray-700">
+                                    <a className="inline-block p-3" href="#">
+                                        <i className="fas fa-th-large text-xl md:text-xs"></i>
+                                        <span className="hidden md:inline">post</span>
                                     </a>
                                 </li>
                             </ul>
-                            <div class="flex flex-wrap -mx-px md:-mx-3 px-3">
+                            <div className="flex flex-wrap -mx-px md:-mx-3 px-3">
                                 {postdata && postdata.map((e) => {
                                     return <>
                                         <Post title={e.title} url={e.title} imgsrc={e.bgimage} />
@@ -86,4 +86,4 @@ function profile() {
         </>
     )
 }
-export default profile
+export default Profile
