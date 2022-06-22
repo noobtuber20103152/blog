@@ -27,7 +27,7 @@ function index() {
                 {/* <title>Commnet - {slug.split("-").join(" ")}</title> */}
             </Head>
             <Sidebar />
-            <div class="h-full px-0 w-screen flex items-center flex-col justify-center  bg-white ">
+            <div className="h-full px-0 w-screen flex items-center flex-col justify-center  bg-white ">
                 {commentdata && commentdata.map((e) => {
                     return <>
                         <Commentcard author={e.author} image={e.image} message={e.message} />

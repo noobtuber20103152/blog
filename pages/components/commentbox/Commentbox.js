@@ -39,26 +39,26 @@ function Commentbox(props) {
     return (
         <>
             <ToastContainer />
-            <div class="md:w-1/2 w-full bg-white p-2 pt-4 rounded shadow-lg">
-                <div class="flex ml-3">
-                    <div class="mr-3">
-                        <img height={50} width={50} src={props.image} alt="" class="rounded-full" />
+            <div className="md:w-1/2 w-full bg-white p-2 pt-4 rounded shadow-lg">
+                <div className="flex ml-3">
+                    <div className="mr-3">
+                        <img height={50} width={50} src={props.image} alt="" className="rounded-full" />
                     </div>
                     <div>
-                        <h1 class="font-semibold">{props.author}</h1>
-                        <p class="text-xs text-gray-500">{props.about}</p>
+                        <h1 className="font-semibold">{props.author}</h1>
+                        <p className="text-xs text-gray-500">{props.about}</p>
                     </div>
                 </div>
-                <div class="mt-3 p-3 w-full">
-                    <textarea value={commentdata.message} name="message" onChange={onchange} rows="3" class="border p-2 rounded w-full" placeholder="Write something..."></textarea>
+                <div className="mt-3 p-3 w-full">
+                    <textarea value={commentdata.message} name="message" onChange={onchange} rows="3" className="border p-2 rounded w-full" placeholder="Write something..."></textarea>
                 </div>
-                <div class="flex  mx-3">
+                <div className="flex  mx-3">
                     <div>
-                        <button onClick={submit} class="px-4 mx-1 py-1 bg-gray-800 text-white rounded font-light hover:bg-gray-700">Submit</button>
+                        <button onClick={submit} className="px-4 mx-1 py-1 bg-gray-800 text-white rounded font-light hover:bg-gray-700">Submit</button>
                     </div>
                     <div>
                         <Link href={`/comment/${props.title}`}>
-                            <button class="px-4 py-1 mx-1 bg-gray-800 text-white rounded font-light hover:bg-gray-700">Comment Page</button>
+                            <button className="px-4 py-1 mx-1 bg-gray-800 text-white rounded font-light hover:bg-gray-700">Comment Page</button>
                         </Link>
                     </div>
                 </div>

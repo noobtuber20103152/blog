@@ -69,53 +69,53 @@ function Sidebar() {
                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css" />
             </Head>
             <ToastContainer />
-            <span class="z-10 fixed  text-black text-4xl top-5 left-4 cursor-pointer" onClick={opeSidebar} >
-                <i class="bi bi-filter-left px-2 bg-blue-200 rounded-md"></i>
+            <span className="z-10 fixed  text-black text-4xl top-5 left-4 cursor-pointer" onClick={opeSidebar} >
+                <i className="bi bi-filter-left px-2 bg-blue-200 rounded-md"></i>
             </span>
-            <div class="z-10 sidebar hidden border shadow-lg fixed md:my-2 md:ml-2 top-0 bottom-0 lg:left-0 p-2 w-[300px] overflow-y-auto text-center bg-white" >
-                <div class="text-gray-100 text-xl">
-                    <div class="p-2.5 mt-1 flex items-center">
-                        <i class="bi bi-app-indicator px-2 py-1 rounded-md bg-blue-600"></i>
-                        <h1 class="font-bold text-black text-[15px] ml-3">Vloger</h1>
-                        <i class="bi bi-x cursor-pointer text-black ml-28 " onClick={opeSidebar}></i>
+            <div className="z-10 sidebar hidden border shadow-lg fixed md:my-2 md:ml-2 top-0 bottom-0 lg:left-0 p-2 w-[300px] overflow-y-auto text-center bg-white" >
+                <div className="text-gray-100 text-xl">
+                    <div className="p-2.5 mt-1 flex items-center">
+                        <i className="bi bi-app-indicator px-2 py-1 rounded-md bg-blue-600"></i>
+                        <h1 className="font-bold text-black text-[15px] ml-3">Vloger</h1>
+                        <i className="bi bi-x cursor-pointer text-black ml-28 " onClick={opeSidebar}></i>
                     </div>
-                    <div class="my-2 bg-gray-600 h-[1px]"></div>
+                    <div className="my-2 bg-gray-600 h-[1px]"></div>
                 </div>
-                <div class="p-2.5 flex items-center rounded-md px-4 duration-300 cursor-pointer border text-black" >
-                    <i class="bi bi-search text-sm"></i>
-                    <input type="text" placeholder="Search" class="text-[15px] ml-4 w-full bg-transparent focus:outline-none" />
+                <div className="p-2.5 flex items-center rounded-md px-4 duration-300 cursor-pointer border text-black" >
+                    <i className="bi bi-search text-sm"></i>
+                    <input type="text" placeholder="Search" className="text-[15px] ml-4 w-full bg-transparent focus:outline-none" />
                 </div>
-                <div class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 hover:text-white text-black" >
-                    <i class="bi bi-house-door-fill"></i>
-                    <Link href="/" ><span class="text-[15px] ml-4  font-bold">Home</span></Link>
+                <div className="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 hover:text-white text-black" >
+                    <i className="bi bi-house-door-fill"></i>
+                    <Link href="/" ><span className="text-[15px] ml-4  font-bold">Home</span></Link>
                 </div>
-                <div class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 hover:text-white text-black">
-                    <i class="bi bi-bookmark-fill"></i>
-                    <Link href="/post/createpost" ><span class="text-[15px] ml-4  font-bold">Create post</span></Link>
+                <div className="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 hover:text-white text-black">
+                    <i className="bi bi-bookmark-fill"></i>
+                    <Link href="/post/createpost" ><span className="text-[15px] ml-4  font-bold">Create post</span></Link>
                 </div>
-                {token && <div class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 hover:text-white text-black">
+                {token && <div className="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 hover:text-white text-black">
                     <Person className='text-xl' />
-                    <Link href={`/profile/${userdata.username.split(" ").join("-")}`} ><span class="text-[15px] ml-4  font-bold">Profile</span></Link>
+                    <Link href={`/profile/${userdata.username.split(" ").join("-")}`} ><span className="text-[15px] ml-4  font-bold">Profile</span></Link>
                 </div>}
-                <div class="my-4 bg-gray-600 h-[1px]"></div>
-                {/* <div onClick={dropdown} class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 hover:text-white ">
-                    <i class="bi bi-chat-left-text-fill"></i>
-                    <div class="flex justify-between w-full items-center">
-                        <span class="text-[15px] ml-4  font-bold">Chatbox</span>
-                        <span class="text-sm rotate-180" id="arrow">
-                            <i class={`bi bi-chevron-${downarrow ? 'down' : 'up'}`}></i>
+                <div className="my-4 bg-gray-600 h-[1px]"></div>
+                {/* <div onClick={dropdown} className="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 hover:text-white ">
+                    <i className="bi bi-chat-left-text-fill"></i>
+                    <div className="flex justify-between w-full items-center">
+                        <span className="text-[15px] ml-4  font-bold">Chatbox</span>
+                        <span className="text-sm rotate-180" id="arrow">
+                            <i className={`bi bi-chevron-${downarrow ? 'down' : 'up'}`}></i>
                         </span>
                     </div>
                 </div>
-                <div class="text-left text-sm mt-2 w-4/5 mx-auto  font-bold" id="submenu" >
-                    <h1 class="cursor-pointer p-2 hover:bg-blue-600 hover:text-white rounded-md mt-1">Social</h1>
-                    <h1 class="cursor-pointer p-2 hover:bg-blue-600 hover:text-white rounded-md mt-1">Personal</h1>
-                    <h1 class="cursor-pointer p-2 hover:bg-blue-600 hover:text-white rounded-md mt-1">Friends</h1>
+                <div className="text-left text-sm mt-2 w-4/5 mx-auto  font-bold" id="submenu" >
+                    <h1 className="cursor-pointer p-2 hover:bg-blue-600 hover:text-white rounded-md mt-1">Social</h1>
+                    <h1 className="cursor-pointer p-2 hover:bg-blue-600 hover:text-white rounded-md mt-1">Personal</h1>
+                    <h1 className="cursor-pointer p-2 hover:bg-blue-600 hover:text-white rounded-md mt-1">Friends</h1>
                 </div> */}
-                <div class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 hover:text-white " >
-                    <i class="bi bi-box-arrow-in-right"></i>
-                    {login && <span onClick={logout} class="text-[15px] ml-4  font-bold">Logout</span>}
-                    {!login && <Link href="/components/auth/Login" ><span class="text-[15px] ml-4  font-bold">Login</span></Link>}
+                <div className="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 hover:text-white " >
+                    <i className="bi bi-box-arrow-in-right"></i>
+                    {login && <span onClick={logout} className="text-[15px] ml-4  font-bold">Logout</span>}
+                    {!login && <Link href="/components/auth/Login" ><span className="text-[15px] ml-4  font-bold">Login</span></Link>}
 
                 </div>
             </div>

@@ -6,7 +6,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Container } from 'postcss';
 import Mainblogcomponent from '../blog/Mainblogcomponent';
-function createpost() {
+function Createpost() {
     const router = useRouter();
     const [btndisable, setbtndisable] = useState(true);
     const [userdata, setuserdata] = useState({ username: "" })
@@ -123,49 +123,49 @@ function createpost() {
             </div>
             {form && <div className="flex my-20  mx-2  justify-center items-center ">
                 <div className="w-12/12">
-                    <form class="w-full">
-                        <div class="flex flex-wrap -mx-3 mb-6">
-                            <div class="w-full md:w-2/2 px-3">
-                                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
+                    <form className="w-full">
+                        <div className="flex flex-wrap -mx-3 mb-6">
+                            <div className="w-full md:w-2/2 px-3">
+                                <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
                                     Blog title
                                 </label>
-                                <input value={data.title} name="title" onChange={onchange} class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Title" />
+                                <input value={data.title} name="title" onChange={onchange} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Title" />
                             </div>
                         </div>
-                        <div class="flex flex-wrap -mx-3 mb-6">
-                            <div class="w-full px-3">
-                                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
+                        <div className="flex flex-wrap -mx-3 mb-6">
+                            <div className="w-full px-3">
+                                <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
                                     Short description about blog
                                 </label>
                                 <textarea value={data.shortdesc} name="shortdesc"  onChange={onchange} className='focus:bg-white focus:outline-none p-2 resize-none focus:border-gray-500 w-full border bg-gray-200' id="" cols="30" rows="4"></textarea>
                             </div>
-                            <div class="w-full px-3">
-                                <label class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
+                            <div className="w-full px-3">
+                                <label className=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
                                     Complete description about your blog( for new line type %^& )
                                 </label>
                                 <textarea value={data.longdesc} placeholder='' onChange={onchange} className='p-2 focus:outline-none focus:bg-white w-full focus:border-gray-500 border bg-gray-200' name="longdesc" id="" cols="30" rows="10"></textarea>
                             </div>
                         </div>
-                        <div class="flex flex-wrap -mx-3 mb-2">
-                            <div class="w-full  px-3 mb-6 md:mb-0">
-                                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-city">
+                        <div className="flex flex-wrap -mx-3 mb-2">
+                            <div className="w-full  px-3 mb-6 md:mb-0">
+                                <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-city">
                                     background image link
                                 </label>
-                                <input value={data.bgimage} name="bgimage" onChange={onchange} class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="text" placeholder="https://source.unsplash.com/random/900×700/?code" />
+                                <input value={data.bgimage} name="bgimage" onChange={onchange} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="text" placeholder="https://source.unsplash.com/random/900×700/?code" />
                             </div>
 
                         </div>
-                        <div class="flex flex-wrap -mx-3 mb-2">
-                            <div class="w-full  px-3 mt-6 md:mb-0">
-                                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
+                        <div className="flex flex-wrap -mx-3 mb-2">
+                            <div className="w-full  px-3 mt-6 md:mb-0">
+                                <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
                                     Other Images links (seperate links by , )
                                 </label>
                                 <textarea value={data.otherimages }onChange={onchange} className='focus:bg-white p-2 resize-none focus:outline-none focus:border-gray-500 w-full border bg-gray-200' name="otherimages" id="" cols="30" placeholder='https://source.unsplash.com/random/900×700/?code, https://source.unsplash.com/random/900×700/?cricket' rows="4"></textarea>
                             </div>
                         </div>
-                        <div class="flex flex-wrap -mx-3 mb-2">
-                            <div class="w-full  px-3 mt-6 md:mb-0">
-                                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
+                        <div className="flex flex-wrap -mx-3 mb-2">
+                            <div className="w-full  px-3 mt-6 md:mb-0">
+                                <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
                                     Tags (seperate tags by , )
                                 </label>
                                 <textarea value={data.tags} onChange={onchange} className='focus:bg-white focus:outline-none p-2 resize-none focus:border-gray-500 w-full border bg-gray-200' name="tags" id="" cols="30" placeholder='react js, javascript' rows="2"></textarea>
@@ -181,4 +181,4 @@ function createpost() {
     )
 }
 
-export default createpost
+export default Createpost

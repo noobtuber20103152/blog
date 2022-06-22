@@ -5,7 +5,7 @@ import Head from "next/head"
 import { useRouter } from "next/router"
 import Sidebar from '../components/siderbar/Sidebar'
 import Commentbox from '../components/commentbox/Commentbox'
-function blog() {
+function Blog() {
     const router = useRouter();
     const { slug } = router.query;
     const [verticlecard, setverticlecard] = useState([]);
@@ -58,4 +58,4 @@ function blog() {
     )
 }
 
-export default blog
+export default Blog

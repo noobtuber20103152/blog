@@ -32,10 +32,10 @@ function Mainblogcomponent(props) {
 
                     </div>
                     <div className="mt-5">
-                        <div class="container grid grid-cols-3 gap-2 mx-auto">
+                        <div className="container grid grid-cols-3 gap-2 mx-auto">
                             {props.otherimages && props.otherimages.map((e) => {
                                 return <>
-                                    <div class="w-full rounded">
+                                    <div className="w-full rounded">
                                         <Image loader={loder} className="w-96 hover:scale-105 duration-500 hover:cursor-pointer h-96 rounded-lg " src={e?e:"asdfa"} height={600} width={1000} />
                                     </div>
                                 </>
