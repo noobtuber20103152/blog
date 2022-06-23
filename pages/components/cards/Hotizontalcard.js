@@ -18,7 +18,7 @@ function Hotizontalcard(props) {
                         <div className="lg:p-6 p-4 lg:w-9/12 flex justify-end  flex-col ">
                             <span className='text-base  font-medium text-gray-400 mb-3' > {props.author}  -  {props.createdAt}</span>
 
-                            <Link href={`../../blog/${props.title.split(" ").join("-")}`}><a className="text-gray-900 text-4xl lg:text-5xl w-full font-bold mb-22">{props.title}</a></Link>
+                            <Link href={`../../blog/${props.title?props.title.split(" ").join("-"):"page-not-found"}`}><a className="text-gray-900 text-4xl lg:text-5xl w-full font-bold mb-22">{props.title}</a></Link>
                             <p className="text-gray-700 text-base w-12/12 font-medium  mt-2 mb-4">{props.shortdesc}
                             </p>
                             <div className='flex'>

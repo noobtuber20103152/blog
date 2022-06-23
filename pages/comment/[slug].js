@@ -24,7 +24,7 @@ function Index() {
     return (
         <>
             <Head>
-                {/* <title>Commnet - {slug.split("-").join(" ")}</title> */}
+                <title>Comment - {slug?.split("-")?.join(" ")}</title>
             </Head>
             <Sidebar />
             <div className="h-full px-0 w-screen flex items-center flex-col justify-center  bg-white ">

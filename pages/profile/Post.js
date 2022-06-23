@@ -5,7 +5,7 @@ function Post(props) {
         <>
             
                 <div className="w-1/3 p-px md:px-3">
-                    <Link href={`/blog/${props.url.split(" ").join("-")}`}>
+                    <Link href={`/blog/${props.url?props.url.split(" ").join("-"):"page-not-found"}`}>
                         <a >
                             <article className="post bg-gray-100 text-white relative pb-full md:mb-6">
                                 <img className="w-full h-full absolute left-0 top-0 object-cover" src={props.imgsrc ? props.imgsrc : "https://source.unsplash.com/random/900×700/?code"} alt="image" />

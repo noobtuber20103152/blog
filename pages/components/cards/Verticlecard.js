@@ -11,7 +11,7 @@ function Verticlecard(props) {
                 <Image loader={myLoder} height={500} width={1000} className="hover:scale-105 duration-500 hover:rounded-lg hover:cursor-pointer w-full h-60 rounded-lg" src={props.bgimage} alt="Sunset in the mountains" />
                 <div className=" px-2 py-4">
                     <p className='text-base text-gray-600 ' >{props.createdAt}</p>
-                    <Link href={`../../blog/${props.title.split(" ").join("-")}`}><a  className="font-bold text-xl mb-2">{props.title}</a></Link>
+                    <Link href={`../../blog/${props.title?props.title.split(" ").join("-"):"page-not-found"}`}><a  className="font-bold text-xl mb-2">{props.title}</a></Link>
                     <p className="text-gray-700 text-[0.9rem]">
                         {props.shortdesc}
                     </p>

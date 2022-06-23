@@ -8,6 +8,7 @@ import Commentbox from '../components/commentbox/Commentbox'
 function Blog() {
     const router = useRouter();
     const { slug } = router.query;
+    // const [title, settitle] = useState(slug.split("-").join(" "));
     const [verticlecard, setverticlecard] = useState([]);
     const [userdata, setuserdata] = useState([])
     useEffect(() => {
@@ -34,12 +35,12 @@ function Blog() {
     return (
         <>
             <Head>
-                <title>{slug.split('-').join(" ")}</title>
+                <title>{slug?.split('-')?.join(" ")}</title>
             </Head>
             <Sidebar />
-            {verticlecard.map((e) => {
+            {verticlecard?.map((e) => {
                 return <>
-                    {e.title == slug.split("-").join(" ") && <Mainblogcomponent otherimages={e.otherimages} author={e.author} title={e.title} createdAt={e.createdAt.slice(0, 10)} shortdesc={e.shortdesc} longdesc={e.longdesc} bgimage={e.bgimage} />}
+                    {e.title == slug?.split("-")?.join(" ") && <Mainblogcomponent otherimages={e.otherimages} author={e.author} title={e.title} createdAt={e.createdAt.slice(0, 10)} shortdesc={e.shortdesc} longdesc={e.longdesc} bgimage={e.bgimage} />}
                 </>
             })}
             {userdata.isLoggedIn && <div className='flex justify-center items-center'>
@@ -47,9 +48,9 @@ function Blog() {
             </div>}
             <div className='mt-10  mb-10 flex flex-col items-center'>
                 <h1 className='text-4xl text-black font-bold'>More blogs</h1>
-                {verticlecard.map((e) => {
+                {verticlecard?.map((e) => {
                     return <>
-                        {e.title != slug.split("-").join(" ") && <Relatedcard createdAt={e.createdAt.slice(0, 10)} title={e.title} bgimage={e.bgimage} shortdesc={e.shortdesc} author={e.author} />}
+                        {e.title != slug?.split("-")?.join(" ") && <Relatedcard createdAt={e.createdAt.slice(0, 10)} title={e.title} bgimage={e.bgimage} shortdesc={e.shortdesc} author={e.author} />}
                     </>
 
                 })}
