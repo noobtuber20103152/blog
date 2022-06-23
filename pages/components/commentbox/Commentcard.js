@@ -3,7 +3,7 @@ import React from 'react'
 function Commentcard(props) {
     return (
         <>
-            <div className="bg-slate-800 my-5 text-white rounded-lg  w-[50rem] space-y-6 p-10">
+            <div className="bg-slate-800 my-5 text-white rounded-lg md:mx-0 mx-6  w-[22rem] md:w-[50rem] space-y-6 p-10">
                 <div className="flex space-x-4 items-center ">
                     <div className="w-12 h-12">
                         <img alt="avatar" src={props.image} className="rounded-full w-full h-full object-cover " />
