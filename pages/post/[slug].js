@@ -181,4 +181,4 @@ function Createpost() {
     )
 }
 
-export default Createpost
+export default Createpost;
