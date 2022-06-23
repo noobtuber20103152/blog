@@ -6,7 +6,7 @@ import { Eye, Lock } from 'react-bootstrap-icons';
 import Header from "../../profile/Header";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Head from "next/Head";
+import Head from "next/head";
 
 function Register() {
     const router = useRouter();

@@ -6,7 +6,7 @@ import Sidebar from "../siderbar/Sidebar";
 import { Eye, Lock } from 'react-bootstrap-icons';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Head from "next/Head";
+import Head from "next/head";
 function Login() {
 
     const router = useRouter();
