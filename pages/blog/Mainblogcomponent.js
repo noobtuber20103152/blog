@@ -23,7 +23,7 @@ function Mainblogcomponent(props) {
                         <Image loader={myLoader} className="w-full rounded-lg h-[34rem]" src={props.bgimage?props.bgimage:"asdf"} height={500} width={1000} />
                     </div>
                     <div className='mt-5'>
-                        {props.longdesc && props.longdesc.map((e) => {
+                        {props.longdesc && props.longdesc?.map((e) => {
                             return <>
                                 <p className='text-xl text-gray-600 font-semibold'>{e}</p>
                                 <br />
@@ -33,7 +33,7 @@ function Mainblogcomponent(props) {
                     </div>
                     <div className="mt-5">
                         <div className="container grid grid-cols-3 gap-2 mx-auto">
-                            {props.otherimages && props.otherimages.map((e) => {
+                            {props.otherimages && props.otherimages?.map((e) => {
                                 return <>
                                     <div className="w-full rounded">
                                         <Image loader={loder} className="w-96 hover:scale-105 duration-500 hover:cursor-pointer h-96 rounded-lg " src={e?e:"asdfa"} height={600} width={1000} />
