@@ -15,7 +15,7 @@ function Commentbox(props) {
         commentdata.image = props.image;
         commentdata.title = props.title;
         // console.log(commentdata);
-        let url = "http://localhost:3000/api/comment/uploadcomment";
+        let url = "/api/comment/uploadcomment";
         const data = await fetch(url, {
             method: "POST",
             headers: {

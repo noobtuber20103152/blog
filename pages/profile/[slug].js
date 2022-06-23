@@ -19,7 +19,7 @@ function Profile() {
             router.push("/components/auth/Login")
         }
         else {
-            fetch("http://localhost:3000/api/auth/getuser", {
+            fetch("/api/auth/getuser", {
                 method: "GET",
                 headers: {
                     "token": window.localStorage.getItem("token")
@@ -31,7 +31,7 @@ function Profile() {
                     if (resdata.isLoggedIn == true) {
                         setuserdata({ username: resdata.username, about: resdata.about, image: resdata.image });
                         console.log(userdata)
-                        fetch("http://localhost:3000/api/fetchdata/fetchdatatouser", {
+                        fetch("/api/fetchdata/fetchdatatouser", {
                             method: "GET",
                             headers: {
                                 "author": resdata.username

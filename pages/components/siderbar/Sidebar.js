@@ -44,7 +44,7 @@ function Sidebar() {
             // router.push("/components/auth/Login")
         }
         else {
-            fetch("http://localhost:3000/api/auth/getuser", {
+            fetch("/api/auth/getuser", {
                 method: "GET",
                 headers: {
                     "token": window.localStorage.getItem("token")

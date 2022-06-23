@@ -13,12 +13,12 @@ function Blog() {
     const [userdata, setuserdata] = useState([])
     useEffect(() => {
         async function fetchData() {
-            let url = "http://localhost:3000/api/fetchdata/fetchdata";
+            let url = "/api/fetchdata/fetchdata";
             let data = await fetch(url, { method: "GET" });
             setverticlecard(await data.json())
         }
         async function fetchuserdata() {
-            let url = "http://localhost:3000/api/auth/getuser"
+            let url = "/api/auth/getuser"
             let data = await fetch(url, {
                 method: "GET",
                 headers: {

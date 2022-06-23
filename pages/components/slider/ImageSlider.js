@@ -8,7 +8,7 @@ function ImageSlider() {
     const [count, setcount] = useState(0);
     useEffect(() => {
         async function fetchData() {
-            let url = "http://localhost:3000/api/fetchdata/fetchdata";
+            let url = "/api/fetchdata/fetchdata";
             let data = await fetch(url, { method: "GET" });
             setfetchdata(await data.json());
         }

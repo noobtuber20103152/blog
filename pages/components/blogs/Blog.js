@@ -4,7 +4,7 @@ export default function Blog() {
     const [verticlecard, setverticlecard] = useState([]);
     useEffect(() => {
         async function fetchData() {
-            let url = "http://localhost:3000/api/fetchdata/fetchdata";
+            let url = "/api/fetchdata/fetchdata";
             let data = await fetch(url, { method: "GET" });
             setverticlecard(await data.json())
         }

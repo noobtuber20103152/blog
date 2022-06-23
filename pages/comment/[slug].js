@@ -10,7 +10,7 @@ function Index() {
     const [commentdata, setcommentdata] = useState([])
     useEffect(() => {
         async function fetchData() {
-            let url = "http://localhost:3000/api/comment/fetchcomment";
+            let url = "/api/comment/fetchcomment";
             let data = await fetch(url, {
                 method: "GET",
                 headers: {

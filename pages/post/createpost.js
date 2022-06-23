@@ -10,7 +10,7 @@ function Createpost() {
     const router = useRouter();
     const [btndisable, setbtndisable] = useState(true);
     const [userdata, setuserdata] = useState({ username: "" })
-    const [date, setdate] = useState({year: new Date().getFullYear(), month:new Date().getMonth(), day: new Date().getDate()})
+    const [date, setdate] = useState({ year: new Date().getFullYear(), month: new Date().getMonth(), day: new Date().getDate() })
     const [form, setform] = useState(true);
     const livepreview = () => {
         setform(!form)
@@ -21,7 +21,7 @@ function Createpost() {
             router.push("/components/auth/Login")
         }
         else {
-            fetch("http://localhost:3000/api/auth/getuser", {
+            fetch("/api/auth/getuser", {
                 method: "GET",
                 headers: {
                     "token": window.localStorage.getItem("token")
@@ -86,7 +86,7 @@ function Createpost() {
                 position: "top-right"
             }
         )
-        fetch("http://localhost:3000/api/post/uploadpost", {
+        fetch("/api/post/uploadpost", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -137,7 +137,7 @@ function Createpost() {
                                 <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
                                     Short description about blog
                                 </label>
-                                <textarea value={data.shortdesc} name="shortdesc"  onChange={onchange} className='focus:bg-white focus:outline-none p-2 resize-none focus:border-gray-500 w-full border bg-gray-200' id="" cols="30" rows="4"></textarea>
+                                <textarea value={data.shortdesc} name="shortdesc" onChange={onchange} className='focus:bg-white focus:outline-none p-2 resize-none focus:border-gray-500 w-full border bg-gray-200' id="" cols="30" rows="4"></textarea>
                             </div>
                             <div className="w-full px-3">
                                 <label className=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
@@ -160,7 +160,7 @@ function Createpost() {
                                 <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-zip">
                                     Other Images links (seperate links by , )
                                 </label>
-                                <textarea value={data.otherimages }onChange={onchange} className='focus:bg-white p-2 resize-none focus:outline-none focus:border-gray-500 w-full border bg-gray-200' name="otherimages" id="" cols="30" placeholder='https://source.unsplash.com/random/900×700/?code, https://source.unsplash.com/random/900×700/?cricket' rows="4"></textarea>
+                                <textarea value={data.otherimages} onChange={onchange} className='focus:bg-white p-2 resize-none focus:outline-none focus:border-gray-500 w-full border bg-gray-200' name="otherimages" id="" cols="30" placeholder='https://source.unsplash.com/random/900×700/?code, https://source.unsplash.com/random/900×700/?cricket' rows="4"></textarea>
                             </div>
                         </div>
                         <div className="flex flex-wrap -mx-3 mb-2">
@@ -176,7 +176,7 @@ function Createpost() {
                 </div>
             </div>}
 
-            {!form && <Mainblogcomponent author={userdata.username} createdAt={date.year+'-'+date.month+'-'+date.day} otherimages={data.otherimages.split(",")} bgimage={data.bgimage} longdesc={data.longdesc.split("%^&")} title={data.title} shortdesc={data.shortdesc} />}
+            {!form && <Mainblogcomponent author={userdata.username} createdAt={date.year + '-' + date.month + '-' + date.day} otherimages={data.otherimages.split(",")} bgimage={data.bgimage} longdesc={data.longdesc.split("%^&")} title={data.title} shortdesc={data.shortdesc} />}
         </>
     )
 }
