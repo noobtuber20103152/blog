@@ -33,7 +33,7 @@ function Index() {
                         <Commentcard author={e.author} image={e.image} message={e.message} />
                     </>
                 })}
-                {commentdata.length==0 && <Commentcard author="Your_Name" image="https://cdn-icons-png.flaticon.com/512/21/21104.png" message="There is no comments till now" />}
+                {commentdata.length == 0 && <Commentcard author="Your_Name" image="https://cdn-icons-png.flaticon.com/512/21/21104.png" message="There is no comments till now" />}
             </div>
 
         </>

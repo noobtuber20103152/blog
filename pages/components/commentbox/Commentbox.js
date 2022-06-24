@@ -53,14 +53,22 @@ function Commentbox(props) {
                     <textarea value={commentdata.message} name="message" onChange={onchange} rows="3" className="border p-2 rounded w-full" placeholder="Write something..."></textarea>
                 </div>
                 <div className="flex  mx-3">
-                    <div>
-                        <button onClick={submit} className="px-4 mx-1 py-1 bg-gray-800 text-white rounded font-light hover:bg-gray-700">Submit</button>
-                    </div>
-                    <div>
-                        <Link href={`/comment/${props.title}`}>
-                            <button className="px-4 py-1 mx-1 bg-gray-800 text-white rounded font-light hover:bg-gray-700">Comment Page</button>
+                    {props.isLoggedIn && <>
+                        <div>
+                            <button onClick={submit} className="px-4 mx-1 py-1 bg-gray-800 text-white rounded font-light hover:bg-gray-700">Submit</button>
+                        </div>
+                        <div>
+                            <Link href={`/comment/${props.title}`}>
+                                <button className="px-4 py-1 mx-1 bg-gray-800 text-white rounded font-light hover:bg-gray-700">Comment Page</button>
+                            </Link>
+                        </div>
+                    </>}
+
+                    {!props.isLoggedIn && <div>
+                        <Link href={`/components/auth/Login`}>
+                            <button className="px-4 py-1 mx-1 bg-gray-800 text-white rounded font-light hover:bg-gray-700">Login</button>
                         </Link>
-                    </div>
+                    </div>}
                 </div>
             </div>
         </>
