@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }) {
     })
   }, [])
   return <>
-    <LoadingBar shadow={true} height={4} color='#f11946' progress={progress} waitingTime={1000} onLoaderFinished={() => setprogress(0)} />
+    <LoadingBar shadow={true} height={4} color='blue' progress={progress} waitingTime={1000} onLoaderFinished={() => setprogress(0)} />
     <Component {...pageProps} />
   </>
 }

@@ -32,7 +32,7 @@ function Mainblogcomponent(props) {
 
                     </div>
                     <div className="mt-5">
-                        <div className="container grid grid-cols-3 gap-2 mx-auto">
+                        <div className="container grid grid-cols-1 md:grid-cols-3 gap-2 mx-auto">
                             {props.otherimages && props.otherimages?.map((e) => {
                                 return <>
                                     <div className="w-full rounded">
