@@ -18,20 +18,20 @@ function Model() {
         <AiOutlineShareAlt className='hover:cursor-pointer text-center text-3xl' onClick={onclick1} />
         <div className={`${display} overflow-y-auto md:w-7/12 w-10/12 h-auto border shadow-lg bg-white `}>
             <div className='flex flex-wrap justify-between '>
-                <a href={`https://twitter.com/share?url=${window.location.href}`} target="_blank" className="w-6/12 flex justify-start items-center px-2 py-4 hover:bg-[#f2f4f7]">
+                <a href={`https://twitter.com/share?url=${window.location.href}`} rel="noreferrer" target="_blank" className="w-6/12 flex justify-start items-center px-2 py-4 hover:bg-[#f2f4f7]">
                     <BsTwitter className='text-2xl text-blue-500' />
                     <span className='mx-2 text-lg font-semibold' >Twitter</span>
                 </a>
-                <a href={`whatsapp://send?text=${window.location.href}`} target="_blank" className="w-6/12 flex justify-start items-center px-2 py-4 hover:bg-[#f2f4f7]">
+                <a href={`whatsapp://send?text=${window.location.href}`} rel="noreferrer" target="_blank" className="w-6/12 flex justify-start items-center px-2 py-4 hover:bg-[#f2f4f7]">
                     <AiOutlineWhatsApp className='text-2xl text-green-700' />
                     <span className='mx-2 text-lg font-semibold' >WhatsApp</span>
                 </a>
 
-                 <a href={`https://linkedin.com/shareArticle?url=${window.location.href}`} target="_blank" className="w-6/12 flex justify-start items-center px-2 py-4 hover:bg-[#f2f4f7]">
+                 <a href={`https://linkedin.com/shareArticle?url=${window.location.href}`}  rel="noreferrer" target="_blank" className="w-6/12 flex justify-start items-center px-2 py-4 hover:bg-[#f2f4f7]">
                    <AiFillLinkedin className='text-2xl text-blue-600' />
                     <span className='mx-2 text-lg font-semibold' >LinkedIn</span>
                 </a> 
-                <a href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`} target="_blank" className="w-6/12 flex justify-start items-center px-2 py-4 hover:bg-[#f2f4f7]">
+                <a href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`} rel="noreferrer" target="_blank" className="w-6/12 flex justify-start items-center px-2 py-4 hover:bg-[#f2f4f7]">
                     <AiFillFacebook className='text-2xl text-blue-900' />
                     <span className='mx-2 text-lg font-semibold' >Facebook</span>
                 </a>
