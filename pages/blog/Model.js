@@ -46,7 +46,7 @@ function Model() {
             </div>
             <div className='my-0 flex justify-start flex-col px-4 pb-2'>
                 <p className='text-start mb-1' >blog page link</p>
-                <input onChange={onchange} value={window.location.href}  type="text" className='border rounded-sm text-sm bg-[#f2f4f7] w-12/12 outline-none py-3 px-2 ' />
+                <input onChange={onchange} value={url}  type="text" className='border rounded-sm text-sm bg-[#f2f4f7] w-12/12 outline-none py-3 px-2 ' />
             </div>
 
         </div>
