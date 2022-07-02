@@ -20,7 +20,7 @@ function Model() {
         return;
     }
     return <>
-        <AiOutlineShareAlt className='hover:cursor-pointer text-center text-3xl' onClick={onclick1} />
+        <AiOutlineShareAlt className='hover:cursor-pointer text-center -mt-6 text-3xl' onClick={onclick1} />
         <div className={`${display} overflow-y-auto md:w-7/12 w-10/12 h-auto border shadow-lg bg-white `}>
             <div className='flex flex-wrap justify-between '>
                 <a href={`https://twitter.com/share?url=${url}`} rel="noreferrer" target="_blank" className="w-6/12 flex justify-start items-center px-2 py-4 hover:bg-[#f2f4f7]">

@@ -57,11 +57,7 @@ function Commentbox(props) {
                         <div>
                             <button onClick={submit} className="px-4 mx-1 py-1 bg-gray-800 text-white rounded font-light hover:bg-gray-700">Submit</button>
                         </div>
-                        <div>
-                            <Link href={`/comment/${props.title}`}>
-                                <button className="px-4 py-1 mx-1 bg-gray-800 text-white rounded font-light hover:bg-gray-700">Comment Page</button>
-                            </Link>
-                        </div>
+                 
                     </>}
 
                     {!props.isLoggedIn && <div>
@@ -69,6 +65,11 @@ function Commentbox(props) {
                             <button className="px-4 py-1 mx-1 bg-gray-800 text-white rounded font-light hover:bg-gray-700">Login</button>
                         </Link>
                     </div>}
+                    <div>
+                            <Link href={`/comment/${props.title}`}>
+                                <button className="px-4 py-1 mx-1 bg-gray-800 text-white rounded font-light hover:bg-gray-700">Comment Page</button>
+                            </Link>
+                        </div>
                 </div>
             </div>
         </>

@@ -19,7 +19,7 @@ function Mainblogcomponent(props) {
                         <h1 className='text-base text-gray-600  text-center '>{props.createdAt}</h1>
                     </div>
                     <div className='absolute -my-5 text-center py-0 '>
-                        <Model/>
+                        <Model />
                     </div>
                     <div className="my-5 flex flex-col justify-center items-center">
                         <h1 className='md:text-5xl text-4xl text-center font-bold'>{props.title}</h1>

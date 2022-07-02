@@ -1,15 +1,25 @@
 import React, { useEffect, useState } from 'react'
 import Head from "next/head"
 import Link from "next/link"
+import Image from "next/image"
 import { useRouter } from "next/router"
 import { Person } from "react-bootstrap-icons"
+import { BsCurrencyDollar } from "react-icons/bs"
 import { ToastContainer, toast } from 'react-toastify';
+import { MdOutlineLogout } from "react-icons/md"
 import 'react-toastify/dist/ReactToastify.css';
 function Sidebar() {
     const router = useRouter();
     const [token, settoken] = useState(undefined)
     const [downarrow, setdownarrow] = useState(true);
+    const [phonepay, setphonepay] = useState(false)
     const [userdata, setuserdata] = useState({ username: "", about: "", image: "" });
+    const pay = () => {
+        setphonepay(true)
+    }
+    const myLoader = ({ src }) => {
+        return src;
+    }
     const dropdown = () => {
         document.querySelector("#submenu").classList.toggle("hidden");
         document.querySelector("#arrow").classList.toggle("rotate-0");
@@ -113,10 +123,19 @@ function Sidebar() {
                     <h1 className="cursor-pointer p-2 hover:bg-blue-600 hover:text-white rounded-md mt-1">Friends</h1>
                 </div> */}
                 <div className="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 hover:text-white " >
-                    <i className="bi bi-box-arrow-in-right"></i>
+
+                    {login && <MdOutlineLogout />}
+                    {!login && <i className="bi bi-box-arrow-in-right"></i>}
                     {login && <span onClick={logout} className="text-[15px] ml-4  font-bold">Logout</span>}
                     {!login && <Link href="/components/auth/Login" ><span className="text-[15px] ml-4  font-bold">Login</span></Link>}
+                </div>
+                <div className="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 hover:text-white " >
+                    {<BsCurrencyDollar className='inline' />}
+                    <button onClick={pay}  ><span className="text-[15px] ml-4  font-bold">Want to donate?</span></button>
 
+                </div>
+                <div>
+                    {phonepay && <Image height={150} width={200} src="/images/phonepay.jpg" loader={myLoader} />}
                 </div>
             </div>
 
