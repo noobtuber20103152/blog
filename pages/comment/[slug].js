@@ -14,7 +14,7 @@ function Index() {
             let data = await fetch(url, {
                 method: "GET",
                 headers: {
-                    title: slug
+                    title: slug 
                 }
             });
             setcommentdata(await data.json())

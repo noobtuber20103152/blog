@@ -31,7 +31,7 @@ function Mainblogcomponent(props) {
                     <div className='mt-5'>
                         {props.longdesc && props.longdesc?.map((e) => {
                             return <>
-                                <p className='text-xl text-gray-600 font-semibold'>{e}</p>
+                                <p className='break-words text-xl text-gray-600 font-semibold'>{e}</p>
                                 <br />
                             </>
                         })}
