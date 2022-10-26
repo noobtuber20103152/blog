@@ -71,7 +71,7 @@ function Profile() {
                                     </a>
                                 </li>
                             </ul>
-                            <div className="flex flex-wrap -mx-px md:-mx-3 px-3">
+                            <div className="flex flex-wrap -mx-px md:-mx-3 px-3">l
                                 {postdata && postdata?.map((e) => {
                                     return <>
                                         <Post title={e.title} url={e.title} imgsrc={e.bgimage} />
