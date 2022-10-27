@@ -4,7 +4,6 @@ const Comment = require("../model/comment")
 export default async function upload(req, res) {
     if (req.method == "POST") {
         try {
-            // console.log(req.body)
             const commentData = req.body;
             const savedPost = new Comment({
                 author: commentData.author,
@@ -13,7 +12,6 @@ export default async function upload(req, res) {
                 message: commentData.message
             })
             const responseData = await savedPost.save();
-            // console.log(responseData)
             res.json({ success: "success", responseData })
 
         } catch (error) {
