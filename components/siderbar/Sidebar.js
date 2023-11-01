@@ -122,7 +122,7 @@ function Sidebar() {
         </div>
         <div className="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 hover:text-white text-black">
           <i className="bi bi-bookmark-fill"></i>
-          <Link href="/post/Createpost">
+          <Link href="/post/createpost">
             <span className="text-[15px] ml-4  font-bold">Create post</span>
           </Link>
         </div>
@@ -144,7 +144,7 @@ function Sidebar() {
             </span>
           )}
           {!login && (
-            <Link href="/components/auth/Login">
+            <Link href="/auth/login">
               <span className="text-[15px] ml-4  font-bold">Login</span>
             </Link>
           )}

@@ -1,8 +1,7 @@
-import Head from 'next/head'
-import Blog from './components/blogs/Blog'
-import Sidebar from './components/siderbar/Sidebar'
-import Slider from './components/slider/ImageSlider'
-
+import Head from "next/head";
+import Blog from "../components/blogs/Blog";
+import Sidebar from "../components/siderbar/Sidebar";
+import Slider from "../components/slider/ImageSlider";
 
 export default function Home() {
   return (
@@ -14,7 +13,6 @@ export default function Home() {
       <Sidebar />
       <Slider />
       <Blog />
-
     </>
-  )
+  );
 }

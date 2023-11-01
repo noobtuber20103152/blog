@@ -3,8 +3,11 @@ import Mainblogcomponent from './Mainblogcomponent'
 import Relatedcard from './Relatedcard'
 import Head from "next/head"
 import { useRouter } from "next/router"
-import Sidebar from '../components/siderbar/Sidebar'
-import Commentbox from '../components/commentbox/Commentbox'
+// Commentbox
+// Commentbox
+// import Commentbox from '../components/commentbox/Commentbox'
+import Sidebar from '../../components/siderbar/Sidebar'
+import Commentbox from '../../components/commentbox/Commentbox'
 function Blog() {
     const router = useRouter();
     const { slug } = router.query;

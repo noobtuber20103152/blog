@@ -24,4 +24,4 @@ function Hotizontalcard(props) {
     )
 }
 
-export default Hotizontalcard
+export default Hotizontalcard;

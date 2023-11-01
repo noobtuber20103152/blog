@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link"
 import { useRouter } from "next/router"
-import Sidebar from "../siderbar/Sidebar";
+import Sidebar from "../../components/siderbar/Sidebar";
 import { Eye, Lock } from 'react-bootstrap-icons';
-import Header from "../../profile/Header";
+import Header from "../profile/Header";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Head from "next/head";
@@ -55,7 +55,7 @@ function Register() {
                         position: toast.POSITION.TOP_LEFT
                     });
                     setTimeout(() => {
-                        router.push("/components/auth/Login");
+                        router.push("/auth/login");
                     }, 1000);
                 }
                 setTimeout(() => {
@@ -110,7 +110,7 @@ function Register() {
                             <button disabled={disabled} onClick={submit} value="Log In" className={`opacity-${disabled ? "25" : "100"} bg-blue-600 text-white font-bold text-lg hover:cursor-pointer hover:${disabled ? "bg-blue-600" : "bg-blue-800"}  p-2 mt-8`} >Register</button>
                         </div>
                         <div className="text-center pt-12 pb-12">
-                            <p>Already have an account? <Link href="/components/auth/Login"> Login here </Link></p>
+                            <p>Already have an account? <Link href="/auth/login"> Login here </Link></p>
                         </div>
                     </div>
 
